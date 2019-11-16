@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-const SignUp = props => {
-    const [user, setUser] = useState ({username: "", passsword: ""});
-
+const Login = props => {
+    const [user, setUser] = useState([]);
+    
     const handleChanges = e => {
         setUser({ ...user, [e.target.username]: e.target.value});
     };
@@ -31,9 +31,10 @@ const SignUp = props => {
                 onChange={handleChanges}
                 value={user.password}
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit">Log In</button>
         </form>
     )
+
 }
 
-export default SignUp;
+export default Login;
