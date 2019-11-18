@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Input } from 'reactstrap';
 
 export const MainDiv = styled.div`
     margin: auto;
@@ -18,4 +19,8 @@ export const StyledLink = styled(Link)`
         text-decoration: none;
         color: black;
     }
+`
+
+export const BigInput = styled(Input)`
+    height: 500px;
 `

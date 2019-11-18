@@ -1,53 +1,42 @@
 import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
-import { MainDiv } from '../components/Styles';
-import { LinkDiv } from '../components/Styles';
-import { StyledLink } from '../components/Styles';
+import { MainDiv, LinkDiv, StyledLink } from '../components/Styles';
 import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
-
+import axiosWithAuth from '../components/axiosWithAuth'
 const SignUp = props => {
-    const [user, setUser] = useState ({username: "", passsword: ""});
+    const[userCredentials, setUserCredentials] = useState({username:'', password:''})
 
     const handleChanges = e => {
-        setUser({ ...user, [e.target.username]: e.target.value});
+        setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value});
     };
 
-    const submitForm = e => {
+    const onSubmit = e => {
         e.preventDefault();
-        props.addNewUser(user);
-        setUser({username: "", password: ""})
-    }
+        axiosWithAuth()
+        .post('/accounts/register', userCredentials)
+        .then(res => {
+            console.log(res)
+          localStorage.setItem('token', res.data.token)
+        //   props.history.push('/BubblePage')
+        })
+        .catch(err => console.error(err))
+      }
+
 
     return (
         <div>
             <NavBar />
             <MainDiv>
-        <Form onSubmit={submitForm}>
+        <Form onSubmit={onSubmit}>
             <FormGroup>
                 <Label for="username">Username</Label>
-                <Input type="username" name="username" id="username" placeholder="Username" />
+                <Input type="text" name="username" id="username" placeholder="Username" onChange={handleChanges} />
             </FormGroup>
             <FormGroup>
                 <Label for="password">Password</Label>
-                <Input type="password" name="password" id="password" placeholder="Password" />
+                <Input type="password" name="password" id="password" placeholder="Password" onChange={handleChanges} />
             </FormGroup>
-            {/* <label htmlFor="username">Username</label>
-            <input
-                id="username"
-                type="text"
-                name="username"
-                onChange={handleChanges}
-                value={user.username}
-            />
-            <label htmlFor="password">Password</label>
-            <input
-                id="password"
-                type="text"
-                name="password"
-                onChange={handleChanges}
-                value={user.password}
-            /> */}
-            <Button>Sign Up</Button>
+            <Button onClick={onSubmit}>Sign Up</Button>
             <LinkDiv>
                 <StyledLink to ="/login">Already have an account? Log in</StyledLink>
             </LinkDiv>
