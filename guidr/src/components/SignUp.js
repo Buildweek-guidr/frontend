@@ -1,27 +1,9 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar'
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import styled from 'styled-components';
-
-const MainDiv = styled.div`
-    margin: auto;
-    height: auto;
-    width: 40%;
-`
-const LinkDiv = styled.div`
-    text-align: center;
-    margin-top: 15px;
-`
-const StyledLink = styled(Link)`
-    color: black;
-    text-decoration: none;
-
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
-        color: black;
-    }
-`
+import { MainDiv } from '../components/Styles';
+import { LinkDiv } from '../components/Styles';
+import { StyledLink } from '../components/Styles';
+import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 
 const SignUp = props => {
     const [user, setUser] = useState ({username: "", passsword: ""});

@@ -1,9 +1,17 @@
 import React from 'react';
-import './App.css';
+import { Route, Switch } from "react-router-dom";
+
+//Functionality 
+import PrivateRoute from '../src/components/PrivateRoute'
+
+//Components
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
-import { Route, Switch } from "react-router-dom";
+import List from '../src/components/List';
+
+//styling
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 function App() {
@@ -11,6 +19,7 @@ function App() {
     <main>
       <Switch>
         {/* <SignUp /> */}
+        <PrivateRoute exact path='/List' component={List} />
         <Route exact path = "/" component={SignUp} />
         <Route path = "/login" component={LogIn} />
       </Switch>
