@@ -64,4 +64,4 @@ const AddTrip = props => {
     )
 }
 
-export default EditProfile;
+export default AddTrip;

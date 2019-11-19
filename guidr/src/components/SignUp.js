@@ -17,7 +17,7 @@ const SignUp = props => {
         .then(res => {
             console.log(res)
           localStorage.setItem('token', res.data.token)
-        //   props.history.push('/BubblePage')
+          props.history.push('/list')
         })
         .catch(err => console.error(err))
       }

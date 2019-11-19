@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import NavBar from '../components/NavBar'
 import { MainDiv, LinkDiv, StyledLink } from '../components/Styles';
 import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 
 import axiosWithAuth from '../components/axiosWithAuth'
-
+import { GuidrContext } from '../contexts/GuidrContext'
 const Login = props => {
     const[userCredentials, setUserCredentials] = useState({username:'', password:''})
-    
+    const {user, setUser} = useContext(GuidrContext)
     const handleChanges = e => {
         setUserCredentials({ ...userCredentials, [e.target.name]: e.target.value});
     };
@@ -18,7 +18,11 @@ const Login = props => {
         .post('/accounts/login', userCredentials)
         .then(res => {
             console.log(res)
+            
+            console.log(user)
           localStorage.setItem('token', res.data.token)
+          localStorage.setItem('user', JSON.stringify(res.data))
+          setUser(JSON.parse(localStorage.getItem('user')))
           props.history.push('/list')
         })
         .catch(err => console.error(err))
