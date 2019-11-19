@@ -7,8 +7,7 @@ const Profile = props => {
         <div>
             <NavBar />
             <div className="Profile">
-                <h2 className="fullName">{props.fullName}</h2>
-                <p className="title">{props.title}</p>
+                <h2 className="title">{props.title}</h2>
                 <p className="tagline">{props.tagline}</p>
                 <p className="guideSpecialty">{props.guideSpecialty}</p>
                 <p className="age">{props.age}</p>

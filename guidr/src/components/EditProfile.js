@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import NavBar from '../components/NavBar'
 
 const EditProfile = props => {
-    const [profile, setProfile] = useState ({ fullName: "", title: "", tagline: "", guideSpecialty: "", age: null, yearsExperience: null})
+    const [profile, setProfile] = useState ({ title: "", tagline: "", guideSpecialty: "", age: null, yearsExperience: null})
 
     // const handleChanges = e => {
     //     setUser({ ...user, [e.target.username]: e.target.value});
@@ -21,10 +21,6 @@ const EditProfile = props => {
             <NavBar />
             <MainDiv>
                 <Form onSubmit={submitForm}>
-                    <FormGroup>
-                        <Label for="fullName">Full Name</Label>
-                        <Input type="text" name="fullName" id="fullName" />
-                    </FormGroup>
                     <FormGroup>
                         <Label for="title">Title</Label>
                         <Input type="text" name="title" id="title" />

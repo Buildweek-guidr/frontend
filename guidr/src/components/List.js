@@ -4,8 +4,8 @@ import axiosWithAuth from '../components/axiosWithAuth'
 import { GuidrContext } from '../contexts/GuidrContext'
 import TripCard from '../components/TripCard';
 
-const List = () => {
-    const [trips, setTrips] = useState([])
+const List = (props) => {
+    const {trips, setTrips} = useContext(GuidrContext)
     const { user } = useContext(GuidrContext)
    
     useEffect(() => {

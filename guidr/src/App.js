@@ -11,6 +11,7 @@ import List from '../src/components/List';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
+import EditTrip from '../src/components/EditTrip'
 
 //styling
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,6 +36,7 @@ function App() {
         <Route path = "/home" component={Home} />
         <Route path = "/profile" component={Profile} />
         <Route path = "/editprofile" component={EditProfile} />
+        <Route path = '/EditTrip/:id' component={EditTrip} />
       </Switch>
       </GuidrContext.Provider>
     </main>
