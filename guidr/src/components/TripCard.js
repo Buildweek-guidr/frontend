@@ -1,6 +1,8 @@
 import React from "react";
 import axiosWithAuth from '../components/axiosWithAuth'
 import {useHistory} from 'react-router-dom'
+import { MainDiv, LinkDiv, StyledLink, TripCardDiv, BackDiv, ButtonDiv, FancyButton } from '../components/Styles';
+
 const TripCard = x => {
     const { id, title, description, isPrivate, isProfessional, duration, distance, date, tripType } = x;
     const history = useHistory()
@@ -18,7 +20,7 @@ const TripCard = x => {
         history.push(`EditTrip/${id}`)
     }
     return (
-        <div className="tripCard">
+        <TripCardDiv>
             <h2>{title}</h2>
                 <p>{description}</p>
                 <p>{duration} hours</p>
@@ -27,10 +29,12 @@ const TripCard = x => {
                 <p>{tripType}</p>
                 <p>Private trip? {isPrivate}</p>
                 <p>Professional trip? {isProfessional}</p>
-                <p>{id}</p>
-                <button onClick={()=>{editTrip({id})}}>Edit</button>
-                <button onClick={()=>{deleteTrip({id})}}> Delete</button>
-        </div>
+                <p>Trip ID: {id}</p>
+                <ButtonDiv>
+                    <FancyButton onClick={()=>{editTrip({id})}}>Edit</FancyButton>
+                    <FancyButton onClick={()=>{deleteTrip({id})}}> Delete</FancyButton>
+                </ButtonDiv>
+        </TripCardDiv>
     )
 }
 

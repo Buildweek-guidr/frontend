@@ -9,7 +9,7 @@ import { Spinner } from 'reactstrap';
 
 const EditProfile = props => {
     const history = useHistory()
-    const [profileData, setProfileData] = useState ({ title: "", tagline: "", guideSpecialty: "", age: 0, yearsExperience: 0})
+    const [profileData, setProfileData] = useState ()
 
     const { profile } = useContext(GuidrContext)
     const { user } = useContext(GuidrContext)
@@ -20,7 +20,7 @@ const EditProfile = props => {
     const submitForm = e => {
         e.preventDefault();
         axiosWithAuth()
-            .put(`/users/${user.userId}/profile`)
+            .put(`/users/${user.userId}/profile`, profileData)
             .then(res => {
                 history.push('/profile')
             })
@@ -28,12 +28,12 @@ const EditProfile = props => {
                 setProfileData({title: "", tagline: "", guideSpecialty: "", age: 0, yearsExperience: 0})
             })
             .catch(error => {
-                console.log(error)
+                console.log(error.error)
             })
     }
 
     useEffect(() => {
-        console.log(profile)
+        console.log(profile, 'profileData')
         setProfileData(profile)
         console.log(profileData)
     }, [])
@@ -66,7 +66,7 @@ const EditProfile = props => {
                         <Input type="number" name="yearsExperience" id="yearsExperience" value={profileData.yearsExperience} onChange={handleChanges}/>
                     </FormGroup>
             
-                    <Button onClick={submitForm}>Submit Changes</Button>
+                    <Button>Submit Changes</Button>
                 </Form>
             </MainDiv>
         </div>

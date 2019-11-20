@@ -5,7 +5,7 @@ import { GuidrContext } from '../contexts/GuidrContext'
 import TripCard from '../components/TripCard';
 import AddTrip from '../components/AddTrip'
 import { Link } from 'react-router-dom';
-
+ 
 const List = (props) => {
     const {trips, setTrips} = useContext(GuidrContext)
     const { user } = useContext(GuidrContext)

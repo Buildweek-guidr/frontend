@@ -6,7 +6,7 @@ import { GuidrContext } from '../contexts/GuidrContext'
 import axiosWithAuth from '../components/axiosWithAuth'
 import { useHistory } from 'react-router-dom'
 const AddTrip = props => {
-    const [trip, setTrip] = useState ({ title: "", description: "", isPrivate: false, isProfessional: false, duration: 0, distance: null, date: null, tripType: "" })
+    const [trip, setTrip] = useState ({ title: "", description: "", isPrivate: false, isProfessional: false, duration: 0, distance: 0, date: null, tripType: "" })
     const { trips } = useContext(GuidrContext)
     const { user } = useContext(GuidrContext)
     const history = useHistory()
@@ -21,10 +21,13 @@ const AddTrip = props => {
         axiosWithAuth()
         .post(`/trips`, {...trip, user_id: user.userId})
         .then(res => {
-            setTrip({ title: "", description: "", isPrivate: false, isProfessional: false, duration: 0, distance: null, date: null, tripType: "" })
+            setTrip({ title: "", description: "", isPrivate: false, isProfessional: false, duration: 0, distance: 0, date: null, tripType: "" })
         })
         .finally( res => {
             history.push('/list')
+        })
+        .catch(error => {
+            console.log(error)
         })
         
 
@@ -63,7 +66,7 @@ const AddTrip = props => {
                     </FormGroup>
                     <FormGroup>
                         <Label for="date">Date</Label>
-                        <Input type="date" name="date" id="date" onChange={handleChanges} value={trip.date} />
+                        <Input type="date" name="date" id="date" onChange={handleChanges} value={trip.date} required/>
                     </FormGroup>
                     <FormGroup>
                         <Label for="tripType">Trip Type</Label>

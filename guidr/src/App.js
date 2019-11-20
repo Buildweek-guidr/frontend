@@ -17,11 +17,12 @@ import AddTrip from './components/AddTrip';
 //styling
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { GlobalStyle } from './components/Styles';
 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token')? true: false);
-      const [trips, setTrips] = useState([]);  // useState changed from {} to []
+      const [trips, setTrips] = useState([]);  
       const [guides, setGuides] = useState([])
       const [user, setUser] = useState([])
       const [profile, setProfile] = useState(null)
@@ -31,6 +32,7 @@ function App() {
   return (
     <main>
       <GuidrContext.Provider value={{trips, setTrips, isLoggedIn, setIsLoggedIn, guides, setGuides, user, setUser, profile, setProfile}}>
+      <GlobalStyle />
       <Switch>
         <PrivateRoute path='/list' component={List} />
         <Route exact path = "/" component={SignUp} />
