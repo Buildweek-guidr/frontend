@@ -16,6 +16,10 @@ const SignUp = () => {
 
     const onSubmit = e => {
         e.preventDefault();
+        if(userCredentials.password.length < 6 || userCredentials.username.length < 6) {
+            alert("Username/Password is too short, must be minimum 6 characters.")
+        }
+        else {
         axiosWithAuth()
         .post('/accounts/register', userCredentials)
         .then(res => {
@@ -26,6 +30,7 @@ const SignUp = () => {
           history.push('/list')
         })
         .catch(err => console.error(err))
+        }
       }
 
 

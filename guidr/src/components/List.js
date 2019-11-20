@@ -5,6 +5,7 @@ import { GuidrContext } from '../contexts/GuidrContext'
 import TripCard from '../components/TripCard';
 import AddTrip from '../components/AddTrip'
 import { Link } from 'react-router-dom';
+import { ListDiv, LinkDiv, StyledLink, IntroDiv } from '../components/Styles';
  
 const List = (props) => {
     const {trips, setTrips} = useContext(GuidrContext)
@@ -25,13 +26,17 @@ const List = (props) => {
     })
 
     return (
-        
         <div>
-            {/* {console.log(user)} */}
             <NavBar />
-            <h1>Hello {user.username}!</h1>
-            <Link to ="/addtrip" >Add new trip</Link>
-            <Link to ="/profile"> View profile</Link>
+            <ListDiv>
+                <IntroDiv>
+                    <h1>Hello {user.username}!</h1>
+                </IntroDiv>
+                <LinkDiv>
+                    <StyledLink to ="/addtrip"> Add new trip </StyledLink>
+                    <StyledLink to ="/profile"> View profile </StyledLink>
+                </LinkDiv>
+                
             {trips.map(x => (
                 <TripCard 
                     id={x.id}
@@ -44,13 +49,8 @@ const List = (props) => {
                     isProfessional={x.isProfessional}
                     
                 />
-                
             ))}
-            <h3>{user.userId}</h3>
-
-            <form>
-
-            </form>
+            </ListDiv>
         </div>
     )
 

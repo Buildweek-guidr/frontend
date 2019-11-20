@@ -35,7 +35,7 @@ const Profile = () => {
             <NavBar />
             <BackDiv>
                 <ProfileDiv>
-                    <p>Title: {profile.title}</p>
+                    <h2>Title: {profile.title}</h2>
                     <p>{profile.tagline}</p>
                     <p>Guide Specialty: {profile.guideSpecialty}</p>
                     <p>Age: {profile.age}</p>

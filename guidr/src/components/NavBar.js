@@ -26,12 +26,12 @@ const Example = (props) => {
               <NavLink>Home</NavLink>
               </Link>
             <NavItem>
-              <Link to  ='/'>
+              <Link to  ='/signup'>
               <NavLink>Sign Up</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link to='/login'>
+              <Link to='/'>
               <NavLink>Login</NavLink>
               </Link>
             </NavItem>
