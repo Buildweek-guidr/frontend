@@ -18,7 +18,6 @@ const Login = props => {
         .post('/accounts/login', userCredentials)
         .then(res => {
             console.log(res)
-            
             console.log(user)
           localStorage.setItem('token', res.data.token)
           localStorage.setItem('user', JSON.stringify(res.data))
