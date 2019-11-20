@@ -16,8 +16,8 @@ const AddTrip = props => {
 
     const submitForm = e => {
         e.preventDefault();
-        const DeezNutz = {...trip, user_id: user.userId}
-        console.log(DeezNutz)
+        const FormStuff = {...trip, user_id: user.userId}
+        console.log(FormStuff)
         axiosWithAuth()
         .post(`/trips`, {...trip, user_id: user.userId})
         .then(res => {
@@ -29,7 +29,7 @@ const AddTrip = props => {
         
 
     }
-// DONt FUcking forget momement.js
+
     return (
         <div>
             <NavBar />

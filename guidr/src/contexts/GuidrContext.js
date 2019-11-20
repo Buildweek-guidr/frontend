@@ -8,6 +8,7 @@ export const GuidrContext = createContext();
 //     const [guides, setGuides] = useState([])
 //     const [user, setUser] = useState({})
 
+
 //     return(
 //         <GuidrContext.Provider value={{trips, setTrips, isLoggedIn, setIsLoggedIn, guides, setGuides, user, setUser}}>
 //             {props.children}

@@ -24,12 +24,13 @@ function App() {
       const [trips, setTrips] = useState([]);  // useState changed from {} to []
       const [guides, setGuides] = useState([])
       const [user, setUser] = useState([])
+      const [profile, setProfile] = useState(null)
       useEffect(() => {
         setUser(JSON.parse(localStorage.getItem('user')))
     },[])
   return (
     <main>
-      <GuidrContext.Provider value={{trips, setTrips, isLoggedIn, setIsLoggedIn, guides, setGuides, user, setUser}}>
+      <GuidrContext.Provider value={{trips, setTrips, isLoggedIn, setIsLoggedIn, guides, setGuides, user, setUser, profile, setProfile}}>
       <Switch>
         <PrivateRoute path='/list' component={List} />
         <Route exact path = "/" component={SignUp} />

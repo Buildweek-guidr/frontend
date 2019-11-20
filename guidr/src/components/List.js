@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 const List = (props) => {
     const {trips, setTrips} = useContext(GuidrContext)
     const { user } = useContext(GuidrContext)
-   const addTrip = (newTrip) => {
+    const addTrip = (newTrip) => {
        setTrips(...trips, newTrip)
-   } 
+    } 
     useEffect(() => {
         const getTrips = () => {
             axiosWithAuth()
