@@ -3,6 +3,7 @@ import { MainDiv, LinkDiv, StyledLink } from '../components/Styles';
 import NavBar from '../components/NavBar';
 import { GuidrContext } from '../contexts/GuidrContext'
 import axiosWithAuth from '../components/axiosWithAuth'
+import { Spinner } from 'reactstrap';
 
 const Profile = () => {
     const {profile, setProfile} = useContext(GuidrContext)
@@ -29,12 +30,11 @@ const Profile = () => {
         }
         getProfile();
     },[])
-    if (!profile) return <div>loading...</div>;
+    if (!profile) return <div><Spinner type="grow" color="primary" /></div>;
     return (
         <div>
             <NavBar />
                 <div className="Profile">
-                    
                     <p className="title">Title: {profile.title}</p>
                     <p className="tagline">{profile.tagline}</p>
                     <p className="guideSpecialty">Guide Specialty: {profile.guideSpecialty}</p>

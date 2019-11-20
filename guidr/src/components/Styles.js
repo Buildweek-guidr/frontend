@@ -20,7 +20,3 @@ export const StyledLink = styled(Link)`
         color: black;
     }
 `
-
-export const BigInput = styled(Input)`
-    height: 500px;
-`

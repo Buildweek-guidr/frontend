@@ -5,7 +5,7 @@ import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import axiosWithAuth from '../components/axiosWithAuth'
 import { useHistory } from 'react-router-dom'
 import { GuidrContext } from '../contexts/GuidrContext'
-const SignUp = props => {
+const SignUp = () => {
     const {user, setUser} = useContext(GuidrContext)
     
     const[userCredentials, setUserCredentials] = useState({username:'', password:'', title: '', tagline: '', guideSpecialty: '', age: null, yearsExperience: null})

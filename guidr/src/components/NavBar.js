@@ -22,9 +22,9 @@ const Example = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink to="../">Home</NavLink>
-            </NavItem>
+            <Link to ='/list'>
+              <NavLink>Home</NavLink>
+              </Link>
             <NavItem>
               <Link to  ='/'>
               <NavLink>Sign Up</NavLink>
