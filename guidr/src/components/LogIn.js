@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import NavBar from '../components/NavBar'
-import { MainDiv, LinkDiv, StyledLink } from '../components/Styles';
+import { MainDiv, LinkDiv, StyledLink, BackDiv } from '../components/Styles';
 import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 
 import axiosWithAuth from '../components/axiosWithAuth'
@@ -30,6 +30,7 @@ const Login = props => {
     return (
         <div>
         <NavBar />
+        <BackDiv>
         <MainDiv>
         <Form onSubmit={onSubmit}>
             <FormGroup>
@@ -46,6 +47,7 @@ const Login = props => {
             </LinkDiv>
         </Form>
         </MainDiv>
+        </BackDiv>
         </div>
         
     )

@@ -1,17 +1,16 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { Link } from 'react-router-dom';
+import img from '../imgs/backImg.jpg';
 
 export const GlobalStyle = createGlobalStyle`
   html, body, p {
     font-family: 'Ubuntu', sans-serif;
     color: #23293B;
   }
-
   h1, h2 {
       font-family: 'rockwell', sans-serif;
       color: #23293B;
   }
-
   html, body {
       background-color: #DAE8EA;
   }
@@ -30,12 +29,10 @@ export const LinkDiv = styled.div`
 export const StyledLink = styled(Link)`
     color: #23293B;
     text-decoration: none;
-
     &:focus, &:visited, &:link, &:active {
         text-decoration: none;
         color: #23293B;
     }
-
     &:hover {
         text-decoration: underline;
         color: #23293B;
@@ -73,7 +70,6 @@ export const FancyButton = styled.button`
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
-
     &:hover {
         background-color: darkgreen;
     }
@@ -83,13 +79,13 @@ export const ButtonDiv = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 4%;
 `
 
 export const TripCardDiv = styled.div`
     background-color: #20B2AA;
     border: 1px solid #20B2AA;
-   
+    max-height:
     width: auto;
     min-width: 40%;
     max-width: 40%;
@@ -101,17 +97,22 @@ export const TripCardDiv = styled.div`
 `
 
 export const ListDiv = styled.div`
-    background-color: #DAE8EA;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
-    
+    flex-direction: column;
+    align-items: center;
+
 `
 
 export const IntroDiv = styled.div`
     margin-top: 2%;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+`
+
+export const ImageBack = styled.div`
+    background-image: url(${img});
+    object-fit: contain;
 `

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { MainDiv, LinkDiv, StyledLink, ProfileDiv, BackDiv } from '../components/Styles';
+import { MainDiv, LinkDiv, StyledLink, ProfileDiv, BackDiv} from '../components/Styles';
 import NavBar from '../components/NavBar';
 import { GuidrContext } from '../contexts/GuidrContext'
 import axiosWithAuth from '../components/axiosWithAuth'
@@ -35,7 +35,9 @@ const Profile = () => {
             <NavBar />
             <BackDiv>
                 <ProfileDiv>
+                    
                     <h2>Title: {profile.title}</h2>
+                    
                     <p>{profile.tagline}</p>
                     <p>Guide Specialty: {profile.guideSpecialty}</p>
                     <p>Age: {profile.age}</p>
@@ -44,6 +46,7 @@ const Profile = () => {
                 <LinkDiv>
                     <StyledLink to="/editprofile">Edit your profile</StyledLink>
                     <StyledLink to="/list">Back to trips</StyledLink>
+                    <StyledLink to="/publicprofile">View your public profile</StyledLink>
                 </LinkDiv>
             </BackDiv>
         </div>

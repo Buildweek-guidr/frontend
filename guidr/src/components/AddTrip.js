@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import { MainDiv, LinkDiv, StyledLink, BigInput } from '../components/Styles';
+import { MainDiv, BackDiv, StyledLink, BigInput } from '../components/Styles';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import NavBar from '../components/NavBar'
 import { GuidrContext } from '../contexts/GuidrContext'
@@ -36,6 +36,7 @@ const AddTrip = props => {
     return (
         <div>
             <NavBar />
+            <BackDiv>
             <MainDiv>
                 <Form onSubmit={submitForm}>
                     <FormGroup>
@@ -76,6 +77,7 @@ const AddTrip = props => {
                     <Button>Add Trip</Button>
                 </Form>
             </MainDiv>
+            </BackDiv>
         </div>
         
     )

@@ -13,7 +13,7 @@ import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
 import EditTrip from '../src/components/EditTrip'
 import AddTrip from './components/AddTrip';
-
+import PublicProfile from './components/PublicProfile'
 //styling
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -42,6 +42,7 @@ function App() {
         <Route path = "/editprofile" component={EditProfile} />
         <Route path = '/EditTrip/:id' component={EditTrip} />
         <Route path = '/addtrip' component={AddTrip} />
+        <Route path= '/publicprofile' component={PublicProfile} />
       </Switch>
       </GuidrContext.Provider>
     </main>

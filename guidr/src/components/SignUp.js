@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import NavBar from '../components/NavBar'
-import { MainDiv, LinkDiv, StyledLink } from '../components/Styles';
+import { MainDiv, LinkDiv, StyledLink, BackDiv } from '../components/Styles';
 import { Button, Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 import axiosWithAuth from '../components/axiosWithAuth'
 import { useHistory } from 'react-router-dom'
@@ -37,6 +37,7 @@ const SignUp = () => {
     return (
         <div>
             <NavBar />
+            <BackDiv>
             <MainDiv>
         <Form onSubmit={onSubmit}>
             <FormGroup>
@@ -73,6 +74,7 @@ const SignUp = () => {
             </LinkDiv>
         </Form>
         </MainDiv>
+        </BackDiv>
         </div>
     )
 }

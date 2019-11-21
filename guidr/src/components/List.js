@@ -5,7 +5,7 @@ import { GuidrContext } from '../contexts/GuidrContext'
 import TripCard from '../components/TripCard';
 import AddTrip from '../components/AddTrip'
 import { Link } from 'react-router-dom';
-import { ListDiv, LinkDiv, StyledLink, IntroDiv } from '../components/Styles';
+import { ListDiv, BackDiv, StyledLink, IntroDiv } from '../components/Styles';
  
 const List = (props) => {
     const {trips, setTrips} = useContext(GuidrContext)
@@ -28,30 +28,29 @@ const List = (props) => {
     return (
         <div>
             <NavBar />
-            <ListDiv>
-                <IntroDiv>
-                    <h1>Hello {user.username}!</h1>
-                    <StyledLink to ="/addtrip"> Add new trip </StyledLink>
-                    <StyledLink to ="/profile"> View profile </StyledLink>
-                </IntroDiv>
-                <LinkDiv>
-                
-                </LinkDiv>
-                
-            {trips.map(x => (
-                <TripCard 
-                    id={x.id}
-                    title={x.title}
-                    description={x.description}
-                    distance={x.distance}
-                    date={x.date}
-                    tripType={x.tripType}
-                    isPrivate={x.isPrivate}
-                    isProfessional={x.isProfessional}
+
+            <IntroDiv>
+                <h4>Hello {user.username}!</h4>
+                <StyledLink to ="/addtrip"> Add new trip </StyledLink>
+                <StyledLink to ="/profile"> View profile </StyledLink>
+            </IntroDiv>
+                <BackDiv>
+                <ListDiv>
+                    {trips.map(x => (
+                        <TripCard 
+                        id={x.id}
+                        title={x.title}
+                        description={x.description}
+                        distance={x.distance}
+                        date={x.date}
+                        tripType={x.tripType}
+                        isPrivate={x.isPrivate}
+                        isProfessional={x.isProfessional}
                     
-                />
-            ))}
-            </ListDiv>
+                        />
+                    ))}
+                </ListDiv>
+                </BackDiv>
         </div>
     )
 
