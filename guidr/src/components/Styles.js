@@ -89,10 +89,10 @@ export const ButtonDiv = styled.div`
 export const TripCardDiv = styled.div`
     background-color: #20B2AA;
     border: 1px solid #20B2AA;
-    margin-left: 10%;
-    margin-right: 10%;
+   
     width: auto;
-    min-width: 80%;
+    min-width: 40%;
+    max-width: 40%;
     text-align: center;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -103,10 +103,15 @@ export const TripCardDiv = styled.div`
 export const ListDiv = styled.div`
     background-color: #DAE8EA;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
 `
 
 export const IntroDiv = styled.div`
     margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 `

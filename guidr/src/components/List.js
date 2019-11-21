@@ -31,10 +31,11 @@ const List = (props) => {
             <ListDiv>
                 <IntroDiv>
                     <h1>Hello {user.username}!</h1>
-                </IntroDiv>
-                <LinkDiv>
                     <StyledLink to ="/addtrip"> Add new trip </StyledLink>
                     <StyledLink to ="/profile"> View profile </StyledLink>
+                </IntroDiv>
+                <LinkDiv>
+                    
                 </LinkDiv>
                 
             {trips.map(x => (
