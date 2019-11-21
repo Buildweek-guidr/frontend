@@ -69,7 +69,7 @@ const SignUp = () => {
             </FormGroup>
             <Button onClick={onSubmit}>Sign Up</Button>
             <LinkDiv>
-                <StyledLink to ="/login">Already have an account? Log in</StyledLink>
+                <StyledLink to ="/">Already have an account? Log in</StyledLink>
             </LinkDiv>
         </Form>
         </MainDiv>

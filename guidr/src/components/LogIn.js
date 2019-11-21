@@ -42,7 +42,7 @@ const Login = props => {
             </FormGroup>
             <Button onClick={onSubmit}>Log In</Button>
             <LinkDiv>
-                <StyledLink to ="/">New User? Sign up</StyledLink>
+                <StyledLink to ="/signup">New User? Sign up</StyledLink>
             </LinkDiv>
         </Form>
         </MainDiv>
