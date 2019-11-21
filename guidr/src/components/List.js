@@ -35,7 +35,7 @@ const List = (props) => {
                     <StyledLink to ="/profile"> View profile </StyledLink>
                 </IntroDiv>
                 <LinkDiv>
-                    
+                
                 </LinkDiv>
                 
             {trips.map(x => (

@@ -35,8 +35,8 @@ function App() {
       <GlobalStyle />
       <Switch>
         <PrivateRoute path='/list' component={List} />
-        <Route exact path = "/signup" component={SignUp} />
-        <Route path = "/" component={LogIn} />
+        <Route  path = "/signup" component={SignUp} />
+        <Route exact path = "/" component={LogIn} />
         <Route path = "/home" component={Home} />
         <Route path = "/profile" component={Profile} />
         <Route path = "/editprofile" component={EditProfile} />
